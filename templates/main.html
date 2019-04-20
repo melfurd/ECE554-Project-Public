@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>{{ title }}</title>
+   <style>
+      input {
+         background-color: rgb(22, 80, 204);
+         /* Blue */
+         border: none;
+         color: white;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+      }
+
+      form {
+         margin-bottom: 2%
+      }
+   </style>
+</head>
+
+<body>
+   <div align="center">
+      <h2>The date and time on the server is: {{ time }}</h2>
+
+   </div>
+   <div align="center">
+      <form action="/start">
+         <input type="submit" value="Start Me" />
+      </form>
+      <form action="/kill">
+         <input type="submit" value="Kill Me" />
+      </form>
+      <form action="/takepicture">
+         <input type="submit" value="Take Picture" />
+      </form>
+	<img src="{{url_for('static', filename='latest.png')}}" height="40%" width="40%" />
+      </form>
+	<center>
+	<h3>Using camera as sensor is: {{ camerasensor }}. Remember, it will slow down the response time of the system.</h3>
+	</center>
+      <form action="/camerasensoron">
+         <input type="submit" value="Camera as Sensor On" />
+      </form>
+      <form action="/camerasensoroff">
+         <input type="submit" value="Camera as Sensor Off" />
+      </form>
+	<center>
+	<h3>Sending emails is : {{ emailenabled }}. Remember, it will slow down the response time of the system.</h3>
+	</center>
+      <form action="/emailon">
+         <input type="submit" value="Email On" />
+      </form>
+      <form action="/emailoff">
+         <input type="submit" value="Email Off" />
+      </form>
+
+        
+   </div>
+</body>
+
+</html>
